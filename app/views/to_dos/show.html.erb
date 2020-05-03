@@ -1,0 +1,27 @@
+<div class = "col-md-2 col-md-offset-5">
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @to_do.category %>
+</p>
+
+<p>
+  <strong>Label:</strong>
+  <%= @to_do.label %>
+</p>
+
+<p>
+  <strong>Amount:</strong>
+  <%= @to_do.amount %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @to_do.date %>
+</p>
+
+
+<%= link_to 'Edit', edit_to_do_path(@to_do) %> |
+<%= link_to 'Back', to_dos_path %>
+</div>

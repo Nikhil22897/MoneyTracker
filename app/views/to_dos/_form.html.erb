@@ -1,0 +1,42 @@
+<%= form_with(model: to_do, local: true) do |form| %>
+  <% if to_do.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(to_do.errors.count, "error") %> prohibited this to_do from being saved:</h2>
+
+      <ul>
+        <% to_do.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :category %>
+    <%= form.select :category, ['Expense','Income'], require: true %>
+  </div>
+
+  <div class="field">
+    <%= form.label :label %>
+    <%= form.text_field :label, :required => true %>
+  </div>
+
+  <div class="field">
+    <%= form.label :amount %>
+    <%= form.number_field :amount, :required => true %>
+  </div>
+
+  <div class="field">
+    <%= form.label :date %>
+    <%= form.date_select :date, :required => true %>
+  </div>
+
+
+  <div class="field" style="visibility: hidden">
+    <%= form.label :user_id %>
+    <%= form.text_field :user_id, required: true, class: 'form-control', readonly: "readonly", value:current_user.id if current_user%> </div>
+
+  <div class="action">
+    <%= form.submit %>
+  </div>
+<% end %>

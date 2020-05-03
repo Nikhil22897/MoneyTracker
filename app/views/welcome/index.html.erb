@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	</head>
+	<body>
+		<div class="bg-image"></div>
+
+		<div class="bg-text">
+	  		<h1 style="font-size:50px">Welcome to MoneyTracker</h1>
+	  		<h2 style="font-style:italic;font-size: 25px">Start Tracking Your money</h2>
+	  		<%if current_user %>
+	  		<%= link_to "Add Transaction", new_to_do_path, class: "btn btn-lg btn-primary" %>
+	  		&nbsp; &nbsp;
+	  		<%= link_to "View List", to_dos_path, class: "btn btn-lg btn-primary" %>
+	  		<%else%>
+	  		<%= link_to "Sign up now!", new_user_registration_path, class: "btn btn-lg btn-primary" %>
+	  		&nbsp;
+	  		<%end%>
+		</div>
+	</body>
+</html>
